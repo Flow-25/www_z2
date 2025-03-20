@@ -49,7 +49,6 @@ def get_oven_list():
             cells = row.find_all("td")
             if len(cells) > 1:
                 name = cells[0].text.replace("[dubious – discuss]", "").strip()
-                
                 wiki_link = cells[0].find("a")
                 if wiki_link is not None:
                     query = wiki_link["href"]
@@ -147,11 +146,103 @@ def create_cathegory_page(cathegory):
     with open(f"cathegories/{file_names[cathegory]}.html", "w") as file:
         file.write(html)
 
-#def create_oven_page(oven):
+def create_oven_page(oven, df):
+    name = oven["name"]
+    img_link = oven["img_link"]
+    wiki_link = oven["wiki_link"]
+    cathegory = oven["cathegory"]
+    try:
+        if name == "Kalua":
+            summary = wikipedia.summary("Kalua (cooking)")
+        elif name == "Cooker":
+            summary = wikipedia.summary("Pressure Cooker")
+        else:
+            summary = wikipedia.summary(name)
+    except Exception:
+        return
+    html = f"""<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>{name} - {cathegory}</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+    </head>
+    <body class="bg-[#121212] text-white min-h-screen flex flex-col items-center justify-center">
 
+        <!-- Go Back Button -->
+        <div class="absolute top-6 left-6">
+            <button onclick="history.back()" 
+                class="relative px-6 py-3 text-lg font-bold uppercase tracking-wide 
+                       rounded-full bg-gradient-to-r from-red-500 to-pink-600 shadow-lg 
+                       transition-all duration-300 ease-in-out 
+                       hover:scale-105 hover:shadow-red-400/80 
+                       before:absolute before:inset-0 before:bg-red-500/30 before:rounded-full 
+                       before:blur-lg before:transition-all before:duration-300 before:ease-in-out 
+                       hover:before:opacity-100">
+                ⬅️ Go Back
+            </button>
+        </div>
 
+        <!-- Content Container -->
+        <div class="container mx-auto px-6 py-12 text-center">
+            <!-- Title -->
+            <h1 class="text-6xl font-extrabold text-white drop-shadow-lg bg-gradient-to-r from-blue-400 to-purple-500 inline-block text-transparent bg-clip-text">
+                🌍 {name}
+            </h1>
+
+            <!-- Image -->
+            <div class="mt-8">
+                <img src="{img_link}" 
+                     alt="{name}" class="w-full max-w-2xl mx-auto rounded-2xl shadow-xl border-4 border-gray-800">
+            </div>
+
+            <!-- Summary Box -->
+            <div class="mt-8 bg-gray-800/40 p-6 rounded-lg shadow-lg max-w-3xl mx-auto">
+                <p class="text-lg text-gray-300 leading-relaxed">
+                    {summary}
+                </p>
+            </div>
+
+            <!-- Wikipedia Link -->
+            <div class="mt-6 flex justify-center">
+                <a href="{wiki_link}" target="_blank">
+                    <div class="mt-8">
+                        <div class="relative px-6 py-5 bg-blue-600 mx-auto bg-gradient-to-r from-blue-500 to-indigo-600 
+                        text-white text-lg font-bold rounded-full shadow-lg transition-all duration-300 hover:scale-105 
+                        hover:shadow-blue-400/80">
+                    
+                        <!-- Pulsing Dot -->
+                        <span class="absolute top-0 right-0 mt-1 mr-1 flex h-3 w-3">
+                            <span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-sky-400 opacity-75"></span>
+                            <span class="relative inline-flex h-3 w-3 rounded-full bg-sky-500"></span>
+                        </span>
+                        <p>
+                            📖 Read More on Wikipedia
+                        </p>
+                    </div>
+                 </a>
+            </div>
+        </div>
+
+    </body>
+    </html>
+    """
+
+    filename = format_oven_name(name)+".html"
+    with open(f"cathegories/ovens/{filename}", "w") as file:
+        file.write(html)
+
+def create_oven_pages():
+    df = get_oven_list()
+    for i, row in df.iterrows():
+        create_oven_page(row.to_dict(), df)
+        print(f"Page {i+1}/{len(df)} created")
 if __name__ == '__main__':
     create_cathegory_page("Earth Ovens")
     create_cathegory_page("Baking Ovens")
     create_cathegory_page("Industrial Ovens")
     create_cathegory_page("Kilns")
+    create_oven_pages()
+    #df = get_oven_list()
+    #print(df)
