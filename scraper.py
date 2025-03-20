@@ -58,6 +58,8 @@ def get_oven_list():
                     query = ""
 
                 img_link = cells[1].find("img", {"class": "mw-file-element"})
+                if name == "Flame broiler":
+                    img_link = cells[1].find_next("img", {"class": "mw-file-element"})
                 if img_link is not None:
                     img_link = "https:" + img_link["src"]
                     img_link = resize_imge(img_link)
@@ -119,19 +121,19 @@ def create_cathegory_page(cathegory):
     </head>
     <body style="background-image: url('backgrounds/{file_names[cathegory]}_bg.jpg');" class="bg-center bg-cover bg-fixed min-h-screen text-white">
 
-        <!-- Go Back Button -->
-        <div class="flex justify-center mt-10">
-    <button onclick="history.back()" 
-            class="relative px-8 py-4 text-lg font-bold text-white uppercase tracking-wide 
-                   rounded-full bg-gradient-to-r from-red-500 to-pink-600 shadow-xl 
-                   transition-all duration-300 ease-in-out 
-                   hover:scale-105 hover:shadow-red-400/80 
-                   before:absolute before:inset-0 before:bg-red-500/30 before:rounded-full 
-                   before:blur-lg before:transition-all before:duration-300 before:ease-in-out 
-                   hover:before:opacity-100">
-        ⬅️ Go Back
-    </button>
-    </div>
+                <!-- Go Back Button -->
+            <div class="absolute top-6 left-6">
+                <button onclick="history.back()" 
+                    class="relative px-6 py-3 text-lg font-bold uppercase tracking-wide 
+                           rounded-full bg-gradient-to-r from-gray-700 to-gray-900 shadow-lg 
+                           transition-all duration-300 ease-in-out 
+                           hover:scale-105 hover:shadow-gray-400/80 
+                           before:absolute before:inset-0 before:bg-gray-600/30 before:rounded-full 
+                           before:blur-lg before:transition-all before:duration-300 before:ease-in-out 
+                           hover:before:opacity-100">
+                    ⬅️ Go Back
+                </button>
+            </div>
 
 
         <!-- Header -->
@@ -170,6 +172,10 @@ def create_oven_page(oven, df):
             summary = wikipedia.summary("Kalua (cooking)")
         elif name == "Cooker":
             summary = wikipedia.summary("Pressure Cooker")
+        elif name == "Pachamanca":
+            summary = wikipedia.summary("Pachamanca (Quechua)")
+        elif name == "Tannur":
+            summary = wikipedia.summary("Clay oven")
         else:
             summary = wikipedia.summary(name)
     except Exception:
@@ -188,10 +194,10 @@ def create_oven_page(oven, df):
         <div class="absolute top-6 left-6">
             <button onclick="history.back()" 
                 class="relative px-6 py-3 text-lg font-bold uppercase tracking-wide 
-                       rounded-full bg-gradient-to-r from-red-500 to-pink-600 shadow-lg 
+                       rounded-full bg-gradient-to-r from-gray-700 to-gray-900 shadow-lg 
                        transition-all duration-300 ease-in-out 
-                       hover:scale-105 hover:shadow-red-400/80 
-                       before:absolute before:inset-0 before:bg-red-500/30 before:rounded-full 
+                       hover:scale-105 hover:shadow-gray-400/80 
+                       before:absolute before:inset-0 before:bg-gray-600/30 before:rounded-full 
                        before:blur-lg before:transition-all before:duration-300 before:ease-in-out 
                        hover:before:opacity-100">
                 ⬅️ Go Back
@@ -258,5 +264,3 @@ if __name__ == '__main__':
     create_cathegory_page("Industrial Ovens")
     create_cathegory_page("Kilns")
     create_oven_pages()
-    #df = get_oven_list()
-    #print(df)
