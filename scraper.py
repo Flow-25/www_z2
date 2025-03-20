@@ -74,10 +74,17 @@ def get_oven_list():
 def gen_html_flashcard(data):
     name = data["name"].strip()
     img_link = data["img_link"].strip()
+    cathegory = data["cathegory"]
+    emoji = {
+        "Earth Ovens": "🌍",
+        "Baking Ovens": "🍞",
+        "Industrial Ovens": "🏭",
+        "Kilns": "🔥"
+    }
 
     return f"""<a href="ovens/{format_oven_name(name)}.html" class="block">
     <div class="bg-white/20 p-4 rounded-xl shadow-md backdrop-blur-lg hover:scale-105 transition duration-300">
-        <h2 class="text-2xl font-semibold">🌍 {name}</h2>
+        <h2 class="text-2xl font-semibold">{emoji[cathegory]} {name}</h2>
         <img src="{img_link}" alt="{name}" class="w-full h-48 object-cover rounded-lg shadow-md">
     </div>
     </a>""".strip()
@@ -151,6 +158,13 @@ def create_oven_page(oven, df):
     img_link = oven["img_link"]
     wiki_link = oven["wiki_link"]
     cathegory = oven["cathegory"]
+    emoji = {
+        "Earth Ovens": "🌍",
+        "Baking Ovens": "🍞",
+        "Industrial Ovens": "🏭",
+        "Kilns": "🔥"
+    }
+
     try:
         if name == "Kalua":
             summary = wikipedia.summary("Kalua (cooking)")
@@ -188,7 +202,7 @@ def create_oven_page(oven, df):
         <div class="container mx-auto px-6 py-12 text-center">
             <!-- Title -->
             <h1 class="text-6xl font-extrabold text-white drop-shadow-lg bg-gradient-to-r from-blue-400 to-purple-500 inline-block text-transparent bg-clip-text">
-                🌍 {name}
+                {emoji[cathegory]} {name}
             </h1>
 
             <!-- Image -->
