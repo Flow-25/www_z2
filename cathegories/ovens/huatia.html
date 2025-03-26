@@ -1,71 +1,71 @@
 <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Huatia - Earth Ovens</title>
-        <script src="https://cdn.tailwindcss.com"></script>
-    </head>
-    <body class="bg-[#121212] text-white min-h-screen flex flex-col items-center justify-center">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Huatia - Earth Ovens</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-white text-black dark:bg-[#121212] dark:text-white min-h-screen flex flex-col items-center justify-center">
 
-        <!-- Go Back Button -->
-        <div class="absolute top-6 left-6">
-            <button onclick="history.back()" 
-                class="relative px-6 py-3 text-lg font-bold uppercase tracking-wide 
-                       rounded-full bg-gradient-to-r from-gray-700 to-gray-900 shadow-lg 
-                       transition-all duration-300 ease-in-out 
-                       hover:scale-105 hover:shadow-gray-400/80 
-                       before:absolute before:inset-0 before:bg-gray-600/30 before:rounded-full 
-                       before:blur-lg before:transition-all before:duration-300 before:ease-in-out 
-                       hover:before:opacity-100">
-                ⬅️ Go Back
-            </button>
-        </div>
+    <!-- Go Back Button -->
+    <div class="absolute top-6 left-6">
+        <button onclick="history.back()" 
+            class="relative px-6 py-3 text-lg font-bold uppercase tracking-wide 
+                   rounded-full bg-gradient-to-r from-gray-300 to-gray-500 dark:from-gray-600 dark:to-gray-800 
+                   shadow-lg text-black dark:text-white transition-all duration-300 ease-in-out 
+                   hover:scale-105 hover:shadow-gray-400/80 dark:hover:shadow-gray-300/50 
+                   before:absolute before:inset-0 before:bg-gray-400/20 dark:before:bg-gray-700/30 
+                   before:rounded-full before:blur-lg before:transition-all before:duration-300 before:ease-in-out 
+                   hover:before:opacity-100">
+            ⬅️ Go Back
+        </button>
+    </div>
 
-        <!-- Content Container -->
-        <div class="container mx-auto px-6 py-12 text-center">
-            <!-- Title -->
-            <h1 class="text-6xl font-extrabold text-white drop-shadow-lg bg-gradient-to-r from-blue-400 to-purple-500 inline-block text-transparent bg-clip-text">
-                🌍 Huatia
+    <!-- Content Container -->
+    <div class="container mx-auto px-6 py-12 text-center">
+        <!-- Title -->
+            <h1 class="text-6xl font-extrabold text-black dark:text-white">
+                Huatia
             </h1>
 
-            <!-- Image -->
-            <div class="mt-8">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/b/b3/Horno_de_k%27urpas_para_wathia.jpg" 
-                     alt="Huatia" class="w-full max-w-2xl mx-auto rounded-2xl shadow-xl border-4 border-gray-800">
-            </div>
+        <!-- Image -->
+        <div class="mt-8">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/b/b3/Horno_de_k%27urpas_para_wathia.jpg" 
+                 alt="Huatia" class="w-full max-w-2xl mx-auto rounded-2xl shadow-xl border-4 border-gray-300 dark:border-gray-800">
+        </div>
 
-            <!-- Summary Box -->
-            <div class="mt-8 bg-gray-800/40 p-6 rounded-lg shadow-lg max-w-3xl mx-auto">
-                <p class="text-lg text-gray-300 leading-relaxed">
-                    A huatia (Spanish pronunciation: [ˈwatja]) or wathiya (Quechua pronunciation: [waˈtʰɪja]) is an earthen oven which dates back to the Inca Empire. This type of oven is commonly associated with the peasants in the southern regions of the Andes in Peru, Bolivia, and Chile.
+        <!-- Summary Box -->
+        <div class="mt-8 bg-gray-200/40 dark:bg-gray-800/40 p-6 rounded-lg shadow-lg max-w-3xl mx-auto">
+            <p class="text-lg text-gray-800 dark:text-gray-300 leading-relaxed">
+                A huatia (Spanish pronunciation: [ˈwatja]) or wathiya (Quechua pronunciation: [waˈtʰɪja]) is an earthen oven which dates back to the Inca Empire. This type of oven is commonly associated with the peasants in the southern regions of the Andes in Peru, Bolivia, and Chile.
 Although the term is often used simply to refer to any simple dirt cooking pit, this is not considered the proper way to build a huatia. The most
 traditional construction (although perhaps not the most common today) is to carefully build a dome or pyramid from rocks over a dirt pit using nothing but gravity to hold the dome together. This dome/pyramid must have an opening in which to place other rocks, kindling, and the food to be cooked. A fire is built inside (special rocks such as volcanic rocks must be selected which can resist the heat) until the rocks become sufficiently heated. Once the food (meat and potatoes most often in addition to herbs) is inside the dome/pyramid is allowed to collapse, either by the action of the heat or by manual intervention, to bury the food. It is then left to cook for many hours soaking up flavors from the surrounding soil. Although any fire in the pit is extinguished the heat remains for a long time. Eventually the food is dug out of the ground and served.
 As a practical matter the Pachamanca is today served in many parts of Peru even though the tradition of the huatia is changing (i.e. to simplify the cooking process). It can be debated whether the elaborate construction process of the traditional huatia really adds anything essential to the actual flavor of the food as opposed to simply burying the food. It is, nevertheless, part of the Peruvian heritage.
-                </p>
-            </div>
-
-            <!-- Wikipedia Link -->
-            <div class="mt-6 flex justify-center">
-                <a href="https://en.wikipedia.org/wiki/Huatia" target="_blank">
-                    <div class="mt-8">
-                        <div class="relative px-6 py-5 bg-blue-600 mx-auto bg-gradient-to-r from-blue-500 to-indigo-600 
-                        text-white text-lg font-bold rounded-full shadow-lg transition-all duration-300 hover:scale-105 
-                        hover:shadow-blue-400/80">
-                    
-                        <!-- Pulsing Dot -->
-                        <span class="absolute top-0 right-0 mt-1 mr-1 flex h-3 w-3">
-                            <span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-sky-400 opacity-75"></span>
-                            <span class="relative inline-flex h-3 w-3 rounded-full bg-sky-500"></span>
-                        </span>
-                        <p>
-                            📖 Read More on Wikipedia
-                        </p>
-                    </div>
-                 </a>
-            </div>
+            </p>
         </div>
 
-    </body>
-    </html>
+        <!-- Wikipedia Link -->
+        <div class="mt-6 flex justify-center">
+            <a href="https://en.wikipedia.org/wiki/Huatia" target="_blank">
+                <div class="mt-8">
+                    <div class="relative px-6 py-5 bg-blue-600 mx-auto bg-gradient-to-r from-blue-500 to-indigo-600 
+                    text-white text-lg font-bold rounded-full shadow-lg transition-all duration-300 hover:scale-105 
+                    hover:shadow-blue-400/80">
+                
+                    <!-- Pulsing Dot -->
+                    <span class="absolute top-0 right-0 mt-1 mr-1 flex h-3 w-3">
+                        <span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-sky-400 opacity-75"></span>
+                        <span class="relative inline-flex h-3 w-3 rounded-full bg-sky-500"></span>
+                    </span>
+                    <p>
+                        📖 Read More on Wikipedia
+                    </p>
+                </div>
+             </a>
+        </div>
+    </div>
+
+</body>
+</html>
     

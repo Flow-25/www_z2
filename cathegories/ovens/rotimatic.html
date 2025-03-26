@@ -1,70 +1,70 @@
 <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Rotimatic - Baking Ovens</title>
-        <script src="https://cdn.tailwindcss.com"></script>
-    </head>
-    <body class="bg-[#121212] text-white min-h-screen flex flex-col items-center justify-center">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rotimatic - Baking Ovens</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-white text-black dark:bg-[#121212] dark:text-white min-h-screen flex flex-col items-center justify-center">
 
-        <!-- Go Back Button -->
-        <div class="absolute top-6 left-6">
-            <button onclick="history.back()" 
-                class="relative px-6 py-3 text-lg font-bold uppercase tracking-wide 
-                       rounded-full bg-gradient-to-r from-gray-700 to-gray-900 shadow-lg 
-                       transition-all duration-300 ease-in-out 
-                       hover:scale-105 hover:shadow-gray-400/80 
-                       before:absolute before:inset-0 before:bg-gray-600/30 before:rounded-full 
-                       before:blur-lg before:transition-all before:duration-300 before:ease-in-out 
-                       hover:before:opacity-100">
-                ⬅️ Go Back
-            </button>
-        </div>
+    <!-- Go Back Button -->
+    <div class="absolute top-6 left-6">
+        <button onclick="history.back()" 
+            class="relative px-6 py-3 text-lg font-bold uppercase tracking-wide 
+                   rounded-full bg-gradient-to-r from-gray-300 to-gray-500 dark:from-gray-600 dark:to-gray-800 
+                   shadow-lg text-black dark:text-white transition-all duration-300 ease-in-out 
+                   hover:scale-105 hover:shadow-gray-400/80 dark:hover:shadow-gray-300/50 
+                   before:absolute before:inset-0 before:bg-gray-400/20 dark:before:bg-gray-700/30 
+                   before:rounded-full before:blur-lg before:transition-all before:duration-300 before:ease-in-out 
+                   hover:before:opacity-100">
+            ⬅️ Go Back
+        </button>
+    </div>
 
-        <!-- Content Container -->
-        <div class="container mx-auto px-6 py-12 text-center">
-            <!-- Title -->
-            <h1 class="text-6xl font-extrabold text-white drop-shadow-lg bg-gradient-to-r from-blue-400 to-purple-500 inline-block text-transparent bg-clip-text">
-                🍞 Rotimatic
+    <!-- Content Container -->
+    <div class="container mx-auto px-6 py-12 text-center">
+        <!-- Title -->
+            <h1 class="text-6xl font-extrabold text-black dark:text-white">
+                Rotimatic
             </h1>
 
-            <!-- Image -->
-            <div class="mt-8">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Factory.svg/502px-Factory.svg.png" 
-                     alt="Rotimatic" class="w-full max-w-2xl mx-auto rounded-2xl shadow-xl border-4 border-gray-800">
-            </div>
-
-            <!-- Summary Box -->
-            <div class="mt-8 bg-gray-800/40 p-6 rounded-lg shadow-lg max-w-3xl mx-auto">
-                <p class="text-lg text-gray-300 leading-relaxed">
-                    Rotimatic is an automated kitchen appliance that makes flatbread. It was invented by Indian-origin couple Pranoti Nagarkar and Rishi Israni in 2008.
-It was initially planned to be launched in 2012 but started taking USA pre-orders in 2014 with an initial deposit for $59 towards the initial price of $699. It was first shipped in 2016, and is currently available in twenty markets. As of May 2018 it had sold 10,000 units and as of October 2018 it has generated a revenue of US$40 million.
-Across all it's units it had made 3 million rotis by July 2017 and 10 million rotis by January 2018.
-                </p>
-            </div>
-
-            <!-- Wikipedia Link -->
-            <div class="mt-6 flex justify-center">
-                <a href="https://en.wikipedia.org/wiki/Rotimatic" target="_blank">
-                    <div class="mt-8">
-                        <div class="relative px-6 py-5 bg-blue-600 mx-auto bg-gradient-to-r from-blue-500 to-indigo-600 
-                        text-white text-lg font-bold rounded-full shadow-lg transition-all duration-300 hover:scale-105 
-                        hover:shadow-blue-400/80">
-                    
-                        <!-- Pulsing Dot -->
-                        <span class="absolute top-0 right-0 mt-1 mr-1 flex h-3 w-3">
-                            <span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-sky-400 opacity-75"></span>
-                            <span class="relative inline-flex h-3 w-3 rounded-full bg-sky-500"></span>
-                        </span>
-                        <p>
-                            📖 Read More on Wikipedia
-                        </p>
-                    </div>
-                 </a>
-            </div>
+        <!-- Image -->
+        <div class="mt-8">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Factory.svg/502px-Factory.svg.png" 
+                 alt="Rotimatic" class="w-full max-w-2xl mx-auto rounded-2xl shadow-xl border-4 border-gray-300 dark:border-gray-800">
         </div>
 
-    </body>
-    </html>
+        <!-- Summary Box -->
+        <div class="mt-8 bg-gray-200/40 dark:bg-gray-800/40 p-6 rounded-lg shadow-lg max-w-3xl mx-auto">
+            <p class="text-lg text-gray-800 dark:text-gray-300 leading-relaxed">
+                Rotimatic is an automated kitchen appliance that makes flatbread. It was invented by Indian-origin couple Pranoti Nagarkar and Rishi Israni in 2008.
+It was initially planned to be launched in 2012 but started taking USA pre-orders in 2014 with an initial deposit for $59 towards the initial price of $699. It was first shipped in 2016, and is currently available in twenty markets. As of May 2018 it had sold 10,000 units and as of October 2018 it has generated a revenue of US$40 million.
+Across all it's units it had made 3 million rotis by July 2017 and 10 million rotis by January 2018.
+            </p>
+        </div>
+
+        <!-- Wikipedia Link -->
+        <div class="mt-6 flex justify-center">
+            <a href="https://en.wikipedia.org/wiki/Rotimatic" target="_blank">
+                <div class="mt-8">
+                    <div class="relative px-6 py-5 bg-blue-600 mx-auto bg-gradient-to-r from-blue-500 to-indigo-600 
+                    text-white text-lg font-bold rounded-full shadow-lg transition-all duration-300 hover:scale-105 
+                    hover:shadow-blue-400/80">
+                
+                    <!-- Pulsing Dot -->
+                    <span class="absolute top-0 right-0 mt-1 mr-1 flex h-3 w-3">
+                        <span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-sky-400 opacity-75"></span>
+                        <span class="relative inline-flex h-3 w-3 rounded-full bg-sky-500"></span>
+                    </span>
+                    <p>
+                        📖 Read More on Wikipedia
+                    </p>
+                </div>
+             </a>
+        </div>
+    </div>
+
+</body>
+</html>
     
