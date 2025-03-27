@@ -117,23 +117,23 @@ def create_cathegory_page(cathegory):
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Smoking Ovens</title>
-        <script src="https://cdn.tailwindcss.com"></script>
+        <link href="../output.css" rel="stylesheet">
     </head>
     <body style="background-image: url('backgrounds/{file_names[cathegory]}_bg.jpg');" class="bg-center bg-cover bg-fixed min-h-screen text-white">
 
-        <!-- Go Back Button -->
-        <div class="absolute top-6 left-6">
-            <button onclick="history.back()" 
-                class="relative px-6 py-3 text-lg font-bold uppercase tracking-wide 
-                       rounded-full bg-gradient-to-r from-gray-300 to-gray-500 dark:from-gray-600 dark:to-gray-800 
-                       shadow-lg text-black dark:text-white transition-all duration-300 ease-in-out 
-                       hover:scale-105 hover:shadow-gray-400/80 dark:hover:shadow-gray-300/50 
-                       before:absolute before:inset-0 before:bg-gray-400/20 dark:before:bg-gray-700/30 
-                       before:rounded-full before:blur-lg before:transition-all before:duration-300 before:ease-in-out 
-                       hover:before:opacity-100">
-                ⬅️ Go Back
-            </button>
-        </div>
+    <!-- Go Back Button -->
+    <div class="absolute top-6 left-6 md:block hidden">
+        <button onclick="history.back()" 
+            class="relative px-6 py-3 text-lg font-bold uppercase tracking-wide 
+                   rounded-full bg-gradient-to-r from-gray-300 to-gray-500 dark:from-gray-600 dark:to-gray-800 
+                   shadow-lg text-black dark:text-white transition-all duration-300 ease-in-out 
+                   hover:scale-105 hover:shadow-gray-400/80 dark:hover:shadow-gray-300/50 
+                   before:absolute before:inset-0 before:bg-gray-400/20 dark:before:bg-gray-700/30 
+                   before:rounded-full before:blur-lg before:transition-all before:duration-300 before:ease-in-out 
+                   hover:before:opacity-100">
+            ⬅️ Go Back
+        </button>
+    </div>
 
 
         <!-- Header -->
@@ -181,17 +181,17 @@ def create_oven_page(oven, df):
     except Exception:
         return
     html = f"""<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{name} - {cathegory}</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-</head>
-<body class="bg-white text-black dark:bg-[#121212] dark:text-white min-h-screen flex flex-col items-center justify-center">
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>{name} - {cathegory}</title>
+        <link href="../../output.css" rel="stylesheet">
+    </head>
+    <body class="bg-white text-black dark:bg-[#121212] dark:text-white min-h-screen flex flex-col items-center justify-center">
 
     <!-- Go Back Button -->
-    <div class="absolute top-6 left-6">
+    <div class="absolute top-6 left-6 md:block hidden">
         <button onclick="history.back()" 
             class="relative px-6 py-3 text-lg font-bold uppercase tracking-wide 
                    rounded-full bg-gradient-to-r from-gray-300 to-gray-500 dark:from-gray-600 dark:to-gray-800 
@@ -245,8 +245,8 @@ def create_oven_page(oven, df):
         </div>
     </div>
 
-</body>
-</html>
+    </body>
+    </html>
     """
 
     filename = format_oven_name(name)+".html"

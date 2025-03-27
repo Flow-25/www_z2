@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Smoking Ovens</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="./output.css" rel="stylesheet">
+    <!--<script src="https://cdn.tailwindcss.com"></script>--> 
 </head>
 <body class="dark:bg-gray-900 dark:text-gray-100">
     <div class="container mx-auto py-10 text-center">
@@ -19,10 +20,17 @@
             ovens come in a variety of forms, each serving a distinct purpose. Below, we explore four fundamental 
             categories of ovens that continue to impact our daily lives.
         </p>
-        <div class="mt-8 gap-6 flex flex-col">
+        <!-- Toggle Layout Button -->
+        <button id="toggleLayout" 
+            class="mt-6 px-4 py-2 rounded-lg shadow-md transition duration-300 ease-in-out 
+                   bg-blue-500 text-white hover:bg-blue-600 
+                   dark:bg-gray-700 dark:text-gray-200 dark:hover:bg-gray-600 hover:scale-105">
+            Toggle Layout
+        </button>
+        <div id="ovensContainer" class="mt-8 gap-6 flex flex-col">
             <!-- Earth Ovens -->
             <a href="cathegories/earth.html" class="block group">
-                <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-md
+                <div class="bg-green-200 dark:bg-gray-800 p-6 rounded-xl shadow-md
                     transition duration-300 ease-in-out 
                     hover:bg-green-500 dark:hover:bg-green-950 hover:bg-opacity-80 hover:shadow-lg hover:shadow-green-500/100 hover:scale-105">
                     <h2 class="text-2xl font-semibold group-hover:text-white dark:group-hover:text-gray-300">🌍 Earth Ovens</h2>
@@ -34,7 +42,7 @@
             
             <!-- Baking Ovens -->
             <a href="cathegories/baking.html" class="block group">
-                <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-md
+                <div class="bg-orange-200 dark:bg-gray-800 p-6 rounded-xl shadow-md
                     transition duration-300 ease-in-out 
                     hover:bg-orange-500 dark:hover:bg-orange-950 hover:bg-opacity-80 hover:shadow-lg hover:shadow-orange-500/100 hover:scale-105">
                     <h2 class="text-2xl font-semibold group-hover:text-white dark:group-hover:text-gray-300">🍞 Baking Ovens</h2>
@@ -46,7 +54,7 @@
             
             <!-- Industrial Ovens -->
             <a href="cathegories/industrial.html" class="block group">
-                <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-md
+                <div class="bg-cyan-200 dark:bg-gray-800 p-6 rounded-xl shadow-md
                     transition duration-300 ease-in-out 
                     hover:bg-sky-500 dark:hover:bg-sky-950 hover:bg-opacity-80 hover:shadow-lg hover:shadow-cyan-500/100 hover:scale-105">
                     <h2 class="text-2xl font-semibold group-hover:text-white dark:group-hover:text-gray-300">🏭 Industrial Ovens</h2>
@@ -58,7 +66,7 @@
             
             <!-- Kilns -->
             <a href="cathegories/kilns.html" class="block group">
-                <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-md
+                <div class="bg-red-200 dark:bg-gray-800 p-6 rounded-xl shadow-md
                     transition duration-300 ease-in-out 
                     hover:bg-red-500 dark:hover:bg-red-950 hover:bg-opacity-80 hover:shadow-lg hover:shadow-red-500/100 hover:scale-105">
                     <h2 class="text-2xl font-semibold group-hover:text-white dark:group-hover:text-gray-300">🔥 Kilns</h2>
@@ -132,5 +140,31 @@
             </div>
         </div>
     </div>
+    <script>
+        // List of flex classes to cycle through
+        const flexClasses = ["flex-col", "flex-row", "flex-auto", "flex-none"];
+        let currentIndex = 0;
+
+        document.getElementById("toggleLayout").addEventListener("click", function () {
+            const container = document.getElementById("ovensContainer");
+
+            container.classList.remove(...flexClasses);
+            currentIndex = (currentIndex + 1) % flexClasses.length;
+            container.classList.add(flexClasses[currentIndex]);
+            if (flexClasses[currentIndex] === "flex-auto") {
+                container.childNodes.forEach(child => {
+                    if (child.nodeType === 1) child.style.flex = "1";
+                });
+            } else if (flexClasses[currentIndex] === "flex-none") {
+                container.childNodes.forEach(child => {
+                    if (child.nodeType === 1) child.style.flex = "none";
+                });
+            } else {
+                container.childNodes.forEach(child => {
+                    if (child.nodeType === 1) child.style.removeProperty("flex");
+                });
+            }
+        });
+    </script>
 </body>
 </html>
